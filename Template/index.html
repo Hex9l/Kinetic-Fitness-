@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kinetic X John — Elite Fitness Coaching</title>
+  <meta name="description" content="Elite coaching for high-achievers who demand scientific precision and personal accountability. Apply for your transformation." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,700;0,800;1,700;1,800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Icons (Lucide via CDN) -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ─── PRELOADER ─── -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-logo">KINETIC<span>.</span></div>
+      <div class="preloader-bar"><div class="preloader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ─── CUSTOM CURSOR ─── -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ─── SCROLL PROGRESS ─── -->
+  <div id="scroll-progress"></div>
+
+  <!-- ════════════════════════════════════════ -->
+  <!--               NAVBAR                    -->
+  <!-- ════════════════════════════════════════ -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">KINETIC <span class="nav-x">X</span> <span class="nav-name">JOHN.</span></a>
+
+    <div class="nav-links">
+      <a href="#about">ABOUT</a>
+      <a href="#results">RESULTS</a>
+      <a href="#pricing">PROGRAMS</a>
+      <a href="#testimonials">TESTIMONIALS</a>
+    </div>
+
+    <div class="nav-right">
+      <a href="#booking" class="btn btn-primary nav-cta">BOOK NOW</a>
+      <button id="mobile-menu-btn" aria-label="Open menu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-overlay"></div>
+  <div id="mobile-drawer">
+    <div class="drawer-header">
+      <span class="drawer-logo">KINETIC<span>.</span></span>
+      <button id="mobile-close-btn" aria-label="Close menu"><i data-lucide="x"></i></button>
+    </div>
+    <div class="drawer-links">
+      <a href="#about" class="drawer-link">ABOUT</a>
+      <a href="#results" class="drawer-link">RESULTS</a>
+      <a href="#pricing" class="drawer-link">PROGRAMS</a>
+      <a href="#testimonials" class="drawer-link">TESTIMONIALS</a>
+      <a href="#booking" class="drawer-link">BOOK</a>
+    </div>
+    <a href="#booking" class="btn btn-primary drawer-cta">START TRANSFORMATION</a>
+  </div>
+
+  <main>
+
+    <!-- ════════════════════════════════════════ -->
+    <!--               HERO                      -->
+    <!-- ════════════════════════════════════════ -->
+    <section id="hero" class="section-hero bg-grid-tech">
+      <div class="hero-glow hero-glow--1"></div>
+      <div class="hero-glow hero-glow--2"></div>
+
+      <div class="container">
+        <!-- Hero Window -->
+        <div class="hero-window" id="heroWindow">
+          <div class="hero-img" style="background-image: url('images/hero.png')"></div>
+          <div class="hero-img-overlay"></div>
+          <div class="hero-img-overlay hero-img-overlay--dark"></div>
+          <div class="scanline"><div class="scanline-bar"></div></div>
+
+          <!-- Corner brackets -->
+          <div class="corner corner--tl"></div>
+          <div class="corner corner--tr"></div>
+          <div class="corner corner--bl"></div>
+          <div class="corner corner--br"></div>
+
+          <!-- Inline stats -->
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="hero-stat__num">10+</span>
+              <span class="hero-stat__label">YEARS EXP</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat__num">300+</span>
+              <span class="hero-stat__label">ATHLETES</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat__num">98%</span>
+              <span class="hero-stat__label">RETENTION</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Text -->
+        <div class="hero-content">
+          <div class="tag-line">
+            <div class="tag-bar"></div>
+            <span>Founded by Coach John</span>
+            <div class="tag-bar"></div>
+          </div>
+          <h1 class="hero-headline reveal-text">
+            Elite Kinetic <em class="text-primary">Performance.</em>
+          </h1>
+          <p class="hero-sub reveal-text">
+            Elite coaching for high-achievers who demand scientific precision and personal accountability.
+          </p>
+          <div class="hero-btns">
+            <a href="#booking" class="btn btn-primary btn--lg">INITIALIZE SETUP <i data-lucide="arrow-right"></i></a>
+            <a href="#about" class="btn btn-outline btn--lg">THE BLUEPRINT</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════ -->
+    <!--             MARQUEE                     -->
+    <!-- ════════════════════════════════════════ -->
+    <div class="marquee-wrap">
+      <div class="marquee-fade marquee-fade--left"></div>
+      <div class="marquee-fade marquee-fade--right"></div>
+      <div class="marquee-track" id="marqueeTrack">
+        <!-- items duplicated for infinite scroll -->
+        <div class="marquee-item"><span>ELITE PERFORMANCE</span><span class="marquee-dot">◆</span></div>
+        <div class="marquee-item"><span>PRECISION ENGINEERED</span><span class="marquee-dot">◆</span></div>
+        <div class="marquee-item"><span>DATA-DRIVEN</span><span class="marquee-dot">◆</span></div>
+        <div class="marquee-item"><span>300+ ATHLETES TRANSFORMED</span><span class="marquee-dot">◆</span></div>
+        <div class="marquee-item"><span>10+ YEARS MASTERY</span><span class="marquee-dot">◆</span></div>
+        <div class="marquee-item"><span>98% RETENTION RATE</span><span class="marquee-dot">◆</span></div>
+        <div class="marquee-item"><span>NSCA CERTIFIED</span><span class="marquee-dot">◆</span></div>
+        <div class="marquee-item"><span>RESULTS GUARANTEED</span><span class="marquee-dot">◆</span></div>
+        <!-- duplicate -->
+        <div class="marquee-item"><span>ELITE PERFORMANCE</span><span class="marquee-dot">◆</span></div>
+        <div class="marquee-item"><span>PRECISION ENGINEERED</span><span class="marquee-dot">◆</span></div>
+        <div class="marquee-item"><span>DATA-DRIVEN</span><span class="marquee-dot">◆</span></div>
+        <div class="marquee-item"><span>300+ ATHLETES TRANSFORMED</span><span class="marquee-dot">◆</span></div>
+        <div class="marquee-item"><span>10+ YEARS MASTERY</span><span class="marquee-dot">◆</span></div>
+        <div class="marquee-item"><span>98% RETENTION RATE</span><span class="marquee-dot">◆</span></div>
+        <div class="marquee-item"><span>NSCA CERTIFIED</span><span class="marquee-dot">◆</span></div>
+        <div class="marquee-item"><span>RESULTS GUARANTEED</span><span class="marquee-dot">◆</span></div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════ -->
+    <!--               STATS                     -->
+    <!-- ════════════════════════════════════════ -->
+    <section class="section-padding bg-background">
+      <div class="container">
+        <div class="app-grid">
+          <div class="stat-card app-glass app-glow col-4 md-col-4 lg-col-3">
+            <div class="stat-card__icon"><i data-lucide="users"></i></div>
+            <div class="stat-card__num"><span class="countup" data-target="300" data-suffix="+">0+</span></div>
+            <div class="stat-card__label">ATHLETES</div>
+          </div>
+          <div class="stat-card app-glass app-glow col-4 md-col-4 lg-col-3">
+            <div class="stat-card__icon"><i data-lucide="target"></i></div>
+            <div class="stat-card__num"><span class="countup" data-target="10" data-suffix="+">0+</span></div>
+            <div class="stat-card__label">YEARS</div>
+          </div>
+          <div class="stat-card app-glass app-glow col-4 md-col-4 lg-col-3">
+            <div class="stat-card__icon"><i data-lucide="activity"></i></div>
+            <div class="stat-card__num"><span class="countup" data-target="98" data-suffix="%">0%</span></div>
+            <div class="stat-card__label">RETENTION</div>
+          </div>
+          <div class="stat-card app-glass app-glow col-4 md-col-4 lg-col-3">
+            <div class="stat-card__icon"><i data-lucide="trending-up"></i></div>
+            <div class="stat-card__num"><span class="countup" data-target="4" data-suffix="M">0M</span></div>
+            <div class="stat-card__label">BURNED</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════ -->
+    <!--              ABOUT                      -->
+    <!-- ════════════════════════════════════════ -->
+    <section id="about" class="section-padding bg-background about-section">
+      <div class="about-radial"></div>
+      <div class="container">
+        <div class="app-grid items-stretch">
+          <!-- Main card -->
+          <div class="about-main-card app-glass col-4 md-col-8 lg-col-8">
+            <div class="about-bottom-bar"></div>
+            <div class="about-tag">
+              <div class="pulse-dot"></div>
+              <span>The Architect x The Method</span>
+            </div>
+            <h2 class="about-headline">
+              SYSTEMIC <em class="text-primary" style="font-size:clamp(2.5rem,8vw,5rem)">Results.</em><br/>
+              PERSONAL <em class="text-secondary">Mastery.</em>
+            </h2>
+            <div class="about-body">
+              <div class="about-body__text">
+                <p>I am Coach John. I don't just build muscle — I engineer human potential. Kinetic Fitness was founded to bridge the gap between hard-data science and old-school intensity.</p>
+                <div class="about-creds">
+                  <div class="about-cred"><div class="cred-dot"></div><span>10+ Years Elite Coaching</span></div>
+                  <div class="about-cred"><div class="cred-dot"></div><span>Certified NSCA Specialist</span></div>
+                </div>
+              </div>
+              <div class="about-img-wrap app-border">
+                <div class="about-img" style="background-image: url('images/coach.png')"></div>
+                <div class="about-img-gradient"></div>
+                <div class="about-img-hud">
+                  <div class="hud-id">ID: ARCHITECT-01 | JOHN</div>
+                  <div class="hud-status">STATUS: LIVE_COACHING_ENABLED</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature cards -->
+          <div class="about-features col-4 md-col-8 lg-col-4">
+            <div class="about-card app-glass">
+              <div class="about-card__icon"><i data-lucide="award"></i></div>
+              <div><div class="about-card__tag">NSCA SPECIALIST</div><div class="about-card__title">Elite Certification</div></div>
+            </div>
+            <div class="about-card app-glass">
+              <div class="about-card__icon"><i data-lucide="zap"></i></div>
+              <div><div class="about-card__tag">DATA-DRIVEN</div><div class="about-card__title">Systemic Power</div></div>
+            </div>
+            <div class="about-card app-glass">
+              <div class="about-card__icon"><i data-lucide="users"></i></div>
+              <div><div class="about-card__tag">300+ ATHLETES</div><div class="about-card__title">Community Hub</div></div>
+            </div>
+            <div class="about-card app-glass">
+              <div class="about-card__icon"><i data-lucide="target"></i></div>
+              <div><div class="about-card__tag">10+ YEARS MASTERY</div><div class="about-card__title">Target Focus</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════ -->
+    <!--             RESULTS                     -->
+    <!-- ════════════════════════════════════════ -->
+    <section id="results" class="section-padding bg-background results-section">
+      <div class="results-radial"></div>
+      <div class="container">
+        <div class="results-header">
+          <div>
+            <div class="section-tag"><div class="tag-bar"></div><span>Transformation Registry</span></div>
+            <h2>RESULTS <em class="text-primary">DON'T LIE</em></h2>
+          </div>
+          <p>Concrete evidence of precision engineering. These athletes committed to the process and redefined their limits.</p>
+        </div>
+        <div class="app-grid">
+          <div class="result-card col-4 md-col-4 lg-col-4 app-border">
+            <div class="result-img" style="background-image: url('images/result-1.png')"></div>
+            <div class="result-overlay"></div>
+            <div class="result-overlay result-overlay--dark"></div>
+            <div class="result-hud"><div class="hud-dot"></div><div class="hud-line"></div></div>
+            <div class="result-info app-glass">
+              <div class="result-info__tag">PROJECT 1</div>
+              <div class="result-info__row">
+                <h3 class="result-info__title">PROJECT LEAN</h3>
+                <div class="result-info__stat">-20KG in 12 Weeks</div>
+              </div>
+              <div class="result-glow-bar"></div>
+            </div>
+          </div>
+          <div class="result-card col-4 md-col-4 lg-col-4 app-border">
+            <div class="result-img" style="background-image: url('images/result-2.png')"></div>
+            <div class="result-overlay"></div>
+            <div class="result-overlay result-overlay--dark"></div>
+            <div class="result-hud"><div class="hud-dot"></div><div class="hud-line"></div></div>
+            <div class="result-info app-glass">
+              <div class="result-info__tag">PROJECT 2</div>
+              <div class="result-info__row">
+                <h3 class="result-info__title">HYPERTROPHY LAB</h3>
+                <div class="result-info__stat">Muscle Gain +8KG</div>
+              </div>
+              <div class="result-glow-bar"></div>
+            </div>
+          </div>
+          <div class="result-card col-4 md-col-4 lg-col-4 app-border">
+            <div class="result-img" style="background-image: url('images/result-3.png')"></div>
+            <div class="result-overlay"></div>
+            <div class="result-overlay result-overlay--dark"></div>
+            <div class="result-hud"><div class="hud-dot"></div><div class="hud-line"></div></div>
+            <div class="result-info app-glass">
+              <div class="result-info__tag">PROJECT 3</div>
+              <div class="result-info__row">
+                <h3 class="result-info__title">STRENGTH CORE</h3>
+                <div class="result-info__stat">PB: 240KG Deadlift</div>
+              </div>
+              <div class="result-glow-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════ -->
+    <!--             PRICING                     -->
+    <!-- ════════════════════════════════════════ -->
+    <section id="pricing" class="section-padding bg-background pricing-section">
+      <div class="pricing-glow"></div>
+      <div class="container" style="position:relative;z-index:1">
+        <div class="text-center mb-16">
+          <div class="section-tag section-tag--center">
+            <div class="tag-bar"></div><span>Pricing Architecture</span><div class="tag-bar"></div>
+          </div>
+          <h2>SELECT YOUR <em class="text-primary">TIER.</em></h2>
+        </div>
+        <div class="app-grid">
+          <!-- Plan 1 -->
+          <div class="pricing-card app-glass col-4 md-col-4 lg-col-4">
+            <div class="pricing-card__icon"><i data-lucide="target"></i></div>
+            <h3 class="pricing-card__name">90-DAY BLAST</h3>
+            <p class="pricing-card__tagline">RAPID BODY RECOMPOSITION</p>
+            <div class="pricing-card__price"><span class="currency">$</span><span class="amount">199</span><span class="period">/mo</span></div>
+            <ul class="pricing-card__features">
+              <li><i data-lucide="check"></i> Custom Training Protocol</li>
+              <li><i data-lucide="check"></i> Nutrition Framework</li>
+              <li><i data-lucide="check"></i> Weekly Video Audit</li>
+              <li><i data-lucide="check"></i> Community Lab Access</li>
+            </ul>
+            <a href="#booking" class="btn btn-outline btn--full">SELECT PROTOCOL</a>
+          </div>
+          <!-- Plan 2 — Popular -->
+          <div class="pricing-card pricing-card--popular app-glass col-4 md-col-4 lg-col-4">
+            <div class="pricing-popular-badge">MOST POPULAR</div>
+            <div class="pricing-card__icon"><i data-lucide="zap"></i></div>
+            <h3 class="pricing-card__name">THE ELITE TRANSFORMATION</h3>
+            <p class="pricing-card__tagline">PERSONAL COACHING MASTERY</p>
+            <div class="pricing-card__price"><span class="currency">$</span><span class="amount">349</span><span class="period">/mo</span></div>
+            <ul class="pricing-card__features">
+              <li><i data-lucide="check"></i> 1:1 Strategy Calls</li>
+              <li><i data-lucide="check"></i> Daily Accountability</li>
+              <li><i data-lucide="check"></i> Bi-Weekly Bloodwork Review</li>
+              <li><i data-lucide="check"></i> Premium Nutrition Hub</li>
+            </ul>
+            <a href="#booking" class="btn btn-primary btn--full">SELECT PROTOCOL</a>
+          </div>
+          <!-- Plan 3 -->
+          <div class="pricing-card app-glass col-4 md-col-8 lg-col-4">
+            <div class="pricing-card__icon"><i data-lucide="award"></i></div>
+            <h3 class="pricing-card__name">VIP 1:1 COACHING</h3>
+            <p class="pricing-card__tagline">THE ARCHITECT'S INNER CIRCLE</p>
+            <div class="pricing-card__price"><span class="currency">$</span><span class="amount">599</span><span class="period">/mo</span></div>
+            <ul class="pricing-card__features">
+              <li><i data-lucide="check"></i> Unlimited 24/7 Priority Access</li>
+              <li><i data-lucide="check"></i> Custom Supplement Protocol</li>
+              <li><i data-lucide="check"></i> In-Person Meetups (Opt)</li>
+              <li><i data-lucide="check"></i> Full Life Optimization</li>
+            </ul>
+            <a href="#booking" class="btn btn-outline btn--full">SELECT PROTOCOL</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════ -->
+    <!--          TESTIMONIALS                   -->
+    <!-- ════════════════════════════════════════ -->
+    <section id="testimonials" class="section-padding bg-background testimonials-section">
+      <div class="testimonials-glow"></div>
+      <div class="container" style="position:relative;z-index:1">
+        <div class="testimonials-header">
+          <div>
+            <div class="section-tag"><div class="tag-bar"></div><span class="text-secondary">Feedback Feed</span></div>
+            <h2>ELITE <em class="text-secondary">VALIDATION.</em></h2>
+          </div>
+          <div class="stars">
+            <i data-lucide="star" class="star-icon"></i>
+            <i data-lucide="star" class="star-icon"></i>
+            <i data-lucide="star" class="star-icon"></i>
+            <i data-lucide="star" class="star-icon"></i>
+            <i data-lucide="star" class="star-icon"></i>
+          </div>
+        </div>
+        <div class="app-grid">
+          <div class="testimonial-card app-glass col-4 md-col-4 lg-col-4">
+            <div class="testimonial-glow"></div>
+            <i data-lucide="quote" class="quote-icon"></i>
+            <p class="testimonial-text">"The data-driven approach changed everything. I stopped guessing and started seeing results within the first 14 days. This is actual science."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">M</div>
+              <div><div class="testimonial-name">MARK R.</div><div class="testimonial-role">CO-FOUNDER</div></div>
+            </div>
+          </div>
+          <div class="testimonial-card app-glass col-4 md-col-4 lg-col-4">
+            <div class="testimonial-glow"></div>
+            <i data-lucide="quote" class="quote-icon"></i>
+            <p class="testimonial-text">"Kinetic Precision isn't just coaching; it's high-level performance engineering. My metabolic health has never been better. Truly elite."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">S</div>
+              <div><div class="testimonial-name">SARAH L.</div><div class="testimonial-role">CEO</div></div>
+            </div>
+          </div>
+          <div class="testimonial-card app-glass col-4 md-col-4 lg-col-4">
+            <div class="testimonial-glow"></div>
+            <i data-lucide="quote" class="quote-icon"></i>
+            <p class="testimonial-text">"I've tried every protocol out there. Nothing compares to the precision and intensity of the Master Architect tier. Simply the best."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">J</div>
+              <div><div class="testimonial-name">JAMES T.</div><div class="testimonial-role">TECH EXEC</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════ -->
+    <!--             BOOKING                     -->
+    <!-- ════════════════════════════════════════ -->
+    <section id="booking" class="section-padding bg-background booking-section">
+      <div class="booking-glow"></div>
+      <div class="container" style="position:relative;z-index:1">
+        <div class="app-grid items-center">
+          <!-- Left text -->
+          <div class="booking-text col-4 md-col-8 lg-col-6">
+            <div class="section-tag"><div class="tag-bar"></div><span>Elite Enrollment 2026</span></div>
+            <h2>APPLY FOR <em class="text-primary" style="font-size:clamp(2.5rem,8vw,5rem)">RESULTS.</em></h2>
+            <p class="booking-sub">I only take on a limited number of new transformation clients per month to ensure absolute precision. Apply now for a strategy audit.</p>
+            <div class="booking-checklist">
+              <div class="booking-check"><div class="check-icon"><i data-lucide="check"></i></div><div><div class="check-label">Limited Intake</div><div class="check-sub">Maximum 5 New Clients/Mo</div></div></div>
+              <div class="booking-check"><div class="check-icon"><i data-lucide="check"></i></div><div><div class="check-label">Personalized Strategy</div><div class="check-sub">Every Protocol is Unique</div></div></div>
+              <div class="booking-check"><div class="check-icon"><i data-lucide="check"></i></div><div><div class="check-label">1:1 Direct Access</div><div class="check-sub">No Middlemen. Direct Coaching.</div></div></div>
+            </div>
+          </div>
+          <!-- Form card -->
+          <div class="col-4 md-col-8 lg-col-6">
+            <div class="booking-form-card app-glass">
+              <div class="enrollment-badge">ENROLLMENT: ACTIVE</div>
+              <form id="bookingForm" class="booking-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Full Identity</label>
+                    <input type="text" class="form-input" placeholder="E.G. JOHN DOE" />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Digital Contact</label>
+                    <input type="email" class="form-input" placeholder="E.G. JOHN@KINETIC.FIT" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Transformation Goal</label>
+                  <textarea class="form-textarea" placeholder="TELL US WHAT YOU WANT TO ACHIEVE..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn--full btn--submit">
+                  SUBMIT APPLICATION <i data-lucide="send"></i>
+                </button>
+                <p class="form-disclaimer">I will review your application within 24-48 hours.</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════ -->
+    <!--           LEAD MAGNET                   -->
+    <!-- ════════════════════════════════════════ -->
+    <section class="section-padding bg-background lead-section">
+      <div class="lead-glow"></div>
+      <div class="container" style="position:relative;z-index:1">
+        <div class="lead-card app-glass">
+          <div class="lead-badge">DIGITAL DOWNLOAD</div>
+          <div class="app-grid items-center">
+            <!-- Mockup -->
+            <div class="lead-mockup col-4 md-col-8 lg-col-6 order-2 lg-order-1">
+              <div class="lead-book app-glass">
+                <div class="lead-book__top-bar"></div>
+                <i data-lucide="book-open" class="lead-book__icon"></i>
+                <h3 class="lead-book__title">THE KINETIC<br/>NUTRITION<br/>BLUEPRINT</h3>
+                <div class="lead-book__divider"></div>
+                <div class="lead-book__version">PROTOCOL v1.0.4</div>
+              </div>
+            </div>
+            <!-- Content -->
+            <div class="col-4 md-col-8 lg-col-6 order-1 lg-order-2">
+              <div class="section-tag"><div class="tag-bar"></div><span>System Update Available</span></div>
+              <h2 style="margin-top:1rem">STOP GUESSING. <em class="text-secondary">START FUELING.</em></h2>
+              <p class="lead-sub">Download the exact nutritional framework our pro-athletes use to shred fat and maintain peak metabolic output. 40+ pages of pure data science.</p>
+              <div class="lead-features">
+                <div class="lead-feature app-glass"><i data-lucide="check-circle-2"></i> Macro Tuning</div>
+                <div class="lead-feature app-glass"><i data-lucide="check-circle-2"></i> Pro Protocol</div>
+                <div class="lead-feature app-glass"><i data-lucide="check-circle-2"></i> Supplements</div>
+                <div class="lead-feature app-glass"><i data-lucide="check-circle-2"></i> Recipes</div>
+              </div>
+              <form class="lead-form" onsubmit="return false;">
+                <input type="email" class="form-input lead-email" placeholder="Enter your system email" />
+                <button type="submit" class="btn btn-primary lead-download-btn">DOWNLOAD <i data-lucide="download"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════ -->
+    <!--               FAQ                       -->
+    <!-- ════════════════════════════════════════ -->
+    <section id="faq" class="section-padding bg-background faq-section">
+      <div class="faq-glow"></div>
+      <div class="container" style="position:relative;z-index:1">
+        <div class="faq-inner">
+          <div class="text-center mb-16">
+            <div class="section-tag section-tag--center"><div class="tag-bar"></div><span>Technical Support</span><div class="tag-bar"></div></div>
+            <h2>SYSTEM <em class="text-primary">INQUIRIES.</em></h2>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item app-glass active">
+              <button class="faq-trigger">
+                <div class="faq-trigger__left">
+                  <div class="faq-icon"><i data-lucide="help-circle"></i></div>
+                  <span class="faq-question">WHAT IS THE FIRST STEP IN THE PROTOCOL?</span>
+                </div>
+                <div class="faq-toggle"><i data-lucide="minus"></i></div>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer__inner">Every athlete begins with a Baseline Metabolic Assessment. We analyze your current state, performance metrics, and bloodwork (optional) to build your custom blueprint.</div>
+              </div>
+            </div>
+            <div class="faq-item app-glass">
+              <button class="faq-trigger">
+                <div class="faq-trigger__left">
+                  <div class="faq-icon"><i data-lucide="help-circle"></i></div>
+                  <span class="faq-question">DO I NEED ELITE EQUIPMENT ACCESS?</span>
+                </div>
+                <div class="faq-toggle"><i data-lucide="plus"></i></div>
+              </button>
+              <div class="faq-answer" style="display:none">
+                <div class="faq-answer__inner">No. Our systems are built to adapt to your environment, whether it's a fully-equipped performance lab or a high-end commercial facility.</div>
+              </div>
+            </div>
+            <div class="faq-item app-glass">
+              <button class="faq-trigger">
+                <div class="faq-trigger__left">
+                  <div class="faq-icon"><i data-lucide="help-circle"></i></div>
+                  <span class="faq-question">HOW OFTEN ARE THE METRICS UPDATED?</span>
+                </div>
+                <div class="faq-toggle"><i data-lucide="plus"></i></div>
+              </button>
+              <div class="faq-answer" style="display:none">
+                <div class="faq-answer__inner">Data points are tracked daily. Strategy calls occur bi-weekly or monthly depending on your tier, but adjustments happen in real-time based on your feedback.</div>
+              </div>
+            </div>
+            <div class="faq-item app-glass">
+              <button class="faq-trigger">
+                <div class="faq-trigger__left">
+                  <div class="faq-icon"><i data-lucide="help-circle"></i></div>
+                  <span class="faq-question">CAN I CANCEL MY INTEGRATION?</span>
+                </div>
+                <div class="faq-toggle"><i data-lucide="plus"></i></div>
+              </button>
+              <div class="faq-answer" style="display:none">
+                <div class="faq-answer__inner">We operate on a 30-day renewal cycle. No long-term lock-ins. We believe in results, not contracts. If the system isn't for you, cancel anytime.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════════════════════════════════════════ -->
+  <!--               FOOTER                    -->
+  <!-- ════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-glow"></div>
+    <div class="container" style="position:relative;z-index:1">
+      <div class="app-grid footer-top">
+        <!-- Brand -->
+        <div class="footer-brand col-4 md-col-4 lg-col-3">
+          <a href="#hero" class="footer-logo">KINETIC <span class="nav-x">X</span> <span class="nav-name">JOHN.</span></a>
+          <p class="footer-tagline">Engineering human performance through data-driven science and personal coaching excellence.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn"><i data-lucide="globe"></i></a>
+            <a href="#" class="social-btn"><i data-lucide="share-2"></i></a>
+            <a href="#" class="social-btn"><i data-lucide="play"></i></a>
+          </div>
+        </div>
+        <!-- Links -->
+        <div class="footer-links col-4 md-col-4 lg-col-3">
+          <div class="footer-col-title">Protocols</div>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#results">Results</a></li>
+            <li><a href="#pricing">Programs</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#booking">Apply Now</a></li>
+          </ul>
+        </div>
+        <!-- Contact -->
+        <div class="footer-contact col-4 md-col-4 lg-col-3">
+          <div class="footer-col-title">Coach Terminal</div>
+          <ul>
+            <li><i data-lucide="map-pin"></i><span>Elite Performance Hub<br/>Digital &amp; Remote Global</span></li>
+            <li><i data-lucide="mail"></i><span>john@kinetic.fit</span></li>
+            <li><i data-lucide="phone"></i><span>+1 (555) 012-3456</span></li>
+          </ul>
+        </div>
+        <!-- CTA Box -->
+        <div class="footer-cta-box app-glass col-4 md-col-4 lg-col-3">
+          <div class="footer-cta-hover"></div>
+          <div style="position:relative;z-index:1">
+            <div class="footer-cta-title">Ready to Evolve?</div>
+            <p class="footer-cta-quote">"Peak performance is not an accident—it is the result of focused engineering."</p>
+            <a href="#booking" class="btn btn-primary btn--full">START TRANSFORMATION <i data-lucide="arrow-up-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 KINETIC X JOHN. DESIGNED FOR PERFORMANCE.</div>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+        <button id="scrollTopBtn" class="scroll-top-btn app-glass">↑</button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>

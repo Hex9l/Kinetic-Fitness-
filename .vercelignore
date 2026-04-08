@@ -1,0 +1,15 @@
+# Exclude non-build assets from Vercel deployment
+Documentation/
+Template/
+*.txt
+*.md
+!README.md
+node_modules/
+.git/
+.vscode/
+.idea/
+dist/
+build/
+coverage/
+.next/
+out/
