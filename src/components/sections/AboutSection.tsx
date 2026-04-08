@@ -61,7 +61,7 @@ export function AboutSection() {
                 </div>
               </div>
               <div className="relative aspect-video md:aspect-auto rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 app-border group/img">
-                <div className="absolute inset-0 bg-cover bg-center bg-top" style={{ backgroundImage: "url('/images/coach.png')" }} />
+                <div className="absolute inset-0 bg-cover bg-center bg-top" style={{ backgroundImage: `url('${import.meta.env.BASE_URL}images/coach.png')` }} />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
                 
                 {/* Technical Overlay */}

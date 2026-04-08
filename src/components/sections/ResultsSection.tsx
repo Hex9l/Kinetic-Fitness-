@@ -4,9 +4,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "@/lib/utils";
 
 const results = [
-  { img: "/images/result-1.png", title: "PROJECT LEAN", stat: "-20KG in 12 Weeks", tag: "Fat Loss", accent: "text-primary", border: "border-primary/20", bg: "bg-primary/5" },
-  { img: "/images/result-2.png", title: "HYPERTROPHY LAB", stat: "Muscle Gain +8KG", tag: "Mass Gain", accent: "text-secondary", border: "border-secondary/30", bg: "bg-secondary/10" },
-  { img: "/images/result-3.png", title: "STRENGTH CORE", stat: "PB: 240KG Deadlift", tag: "Strength", accent: "text-primary", border: "border-primary/20", bg: "bg-primary/5" },
+  { img: `${import.meta.env.BASE_URL}images/result-1.png`, title: "PROJECT LEAN", stat: "-20KG in 12 Weeks", tag: "Fat Loss", accent: "text-primary", border: "border-primary/20", bg: "bg-primary/5" },
+  { img: `${import.meta.env.BASE_URL}images/result-2.png`, title: "HYPERTROPHY LAB", stat: "Muscle Gain +8KG", tag: "Mass Gain", accent: "text-secondary", border: "border-secondary/30", bg: "bg-secondary/10" },
+  { img: `${import.meta.env.BASE_URL}images/result-3.png`, title: "STRENGTH CORE", stat: "PB: 240KG Deadlift", tag: "Strength", accent: "text-primary", border: "border-primary/20", bg: "bg-primary/5" },
 ];
 
 export function ResultsSection() {

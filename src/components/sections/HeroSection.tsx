@@ -90,7 +90,7 @@ export function HeroSection() {
           {/* Hero Image with Overlay */}
           <div 
             className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"
-            style={{ backgroundImage: "url('/images/hero.png')" }}
+            style={{ backgroundImage: `url('${import.meta.env.BASE_URL}images/hero.png')` }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
           <div className="absolute inset-0 bg-black/40" />
